@@ -87,7 +87,7 @@ def webhook_off():
 def send_welcome(message):
     bot.reply_to(message,
                  '<b>Hello! This is a telegram bot template written by <a href="https://github.com/otter18">otter18</a>',
-                 parse_mode='html)
+                 parse_mode='html')
 
 
 @bot.message_handler(func=lambda message: True)
