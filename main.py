@@ -27,7 +27,7 @@ bot = telebot.TeleBot(BOT_TOKEN)
 users = [int(os.environ.get("ADMIN_ID"))]
 
 logger = logging.getLogger()
-logger.setLevel(logging.ERROR)
+logger.setLevel(logging.INFO)
 tg_logger.setup(logger, token=os.environ.get("LOG_BOT_TOKEN"), users=users)
 
 
