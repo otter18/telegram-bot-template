@@ -94,6 +94,7 @@ def start(message):
 
 @bot.message_handler(func=lambda message: True)
 def echo(message):
+    logger.info(f'</code>@{message.from_user.username}<code> used echo:\n\n%s', message.text)
     bot.send_message(message.chat.id, message.text)
 
 
