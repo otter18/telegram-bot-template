@@ -87,8 +87,7 @@ def webhook_off():
 def start(message):
     logger.info(f'</code>@{message.from_user.username}<code> used /start or /help')
     bot.send_message(message.chat.id,
-                     '<b>Hello! This is a telegram bot template '
-                     'written by <a href="https://github.com/otter18">otter18</a>',
+                     '<b>Hello! This is a telegram bot template written by <a href="https://github.com/otter18">otter18</a>',
                      parse_mode='html')
 
 
