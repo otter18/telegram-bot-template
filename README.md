@@ -16,3 +16,9 @@
 ### Tg-logger, [[repo]](https://github.com/otter18/tg_logger)
 - `LOG_BOT_TOKEN` - bot token for logging
 - `ADMIN_ID` - user_id to send logs to
+
+
+## Webserver pages
+- `/?password={ADMIN_PASSWORD}` - status page
+- `/set_webhook?password={ADMIN_PASSWORD}` - setup webhook
+- `/remove_webhook?password={ADMIN_PASSWORD}` - remove webhook
