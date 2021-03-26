@@ -29,6 +29,7 @@ users = [int(os.environ.get("ADMIN_ID"))]
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 tg_logger.setup(logger, token=os.environ.get("LOG_BOT_TOKEN"), users=users)
+tg_logger.setup(app.logger, token=os.environ.get("LOG_BOT_TOKEN"), users=users)
 
 
 # -------------- status webpage --------------
@@ -84,10 +85,11 @@ def webhook_off():
 
 # --------------- bot -------------------
 @bot.message_handler(commands=['help', 'start'])
-def send_welcome(message):
-    bot.reply_to(message,
-                 '<b>Hello! This is a telegram bot template written by <a href="https://github.com/otter18">otter18</a></b>',
-                 parse_mode='html')
+def say_welcome(message):
+    logger.info(f'</code>@{message.from_user.username}<code> used /start or /help)
+    bot.send_message(message.chat.id,
+                     '<b>Hello! This is a telegram bot template written by <a href="https://github.com/otter18">otter18</a></b>',
+                     parse_mode='html')
 
 
 @bot.message_handler(func=lambda message: True)
@@ -97,7 +99,7 @@ def echo(message):
 
 
 if __name__ == '__main__':
-    if bool(os.environ.get("IS_PRODUCTION", False)):
+    if os.environ.get("IS_PRODUCTION", "False") == "True":
         app.run()
     else:
         bot.polling(none_stop=True)
