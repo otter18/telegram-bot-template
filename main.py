@@ -26,10 +26,12 @@ bot = telebot.TeleBot(BOT_TOKEN)
 # ------------- log ---------------
 users = [int(os.environ.get("ADMIN_ID"))]
 
-logger = logging.getLogger()
-logger.setLevel(logging.INFO)
-tg_logger.setup(logger, token=os.environ.get("LOG_BOT_TOKEN"), users=users)
+alpha_logger = logging.getLogger()
+alpha_logger.setLevel(logging.INFO)
+tg_logger.setup(alpha_logger, token=os.environ.get("LOG_BOT_TOKEN"), users=users)
 tg_logger.setup(app.logger, token=os.environ.get("LOG_BOT_TOKEN"), users=users)
+
+logger = logging.getLogger("tg-bot-template")
 
 
 # -------------- status webpage --------------
