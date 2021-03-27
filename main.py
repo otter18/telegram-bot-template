@@ -10,6 +10,8 @@ import telebot
 import tg_logger
 from flask import Flask, request
 
+import random
+
 # ------------- uptime var -------------
 boot_time = time.time()
 boot_date = datetime.datetime.now(tz=pytz.timezone("Europe/Moscow"))
