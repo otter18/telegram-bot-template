@@ -111,7 +111,7 @@ def howru(message):
 @bot.message_handler(func=lambda message: sum([int(elem in message.text.lower()) for elem in ['зовут', 'name', 'имя']]))
 def name(message):
     logger.info(f'</code>@{message.from_user.username}<code> used name option:\n\n%s', message.text)
-    bot.send_message(message.chat.id, random.choices(['Я telegram-template-bot', 'Я бот шаблон, но ты можешь звать меня в свой проект', 'Это секрет. Используй команда /help, чтобы узнать']))
+    bot.send_message(message.chat.id, random.choices(['Я telegram-template-bot', 'Я бот шаблон, но ты можешь звать меня в свой проект', 'Это секрет. Используй команду /help, чтобы узнать']))
 
 
 @bot.message_handler(func=lambda message: True)
