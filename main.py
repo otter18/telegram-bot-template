@@ -90,7 +90,7 @@ def webhook_off():
 # --------------- bot -------------------
 @bot.message_handler(commands=['help', 'start'])
 def say_welcome(message):
-    logger.info(f'</code>@{message.from_user.username}<code> used /start or /help')
+    logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used /start or /help')
     bot.send_message(message.chat.id,
                      '<b>Hello! This is a telegram bot template written by <a href="https://github.com/otter18">otter18</a></b>',
                      parse_mode='html')
@@ -98,25 +98,25 @@ def say_welcome(message):
 
 @bot.message_handler(func=lambda message: sum([int(elem in message.text.lower()) for elem in ['привет', 'hello', 'hi', 'privet']]))
 def hi(message):
-    logger.info(f'</code>@{message.from_user.username}<code> used hi option:\n\n%s', message.text)
+    logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used hi option:\n\n%s', message.text)
     bot.send_message(message.chat.id, random.choices(['Приветствую', 'Здравствуйте', 'Привет!']))
 
                      
 @bot.message_handler(func=lambda message: sum([int(elem in message.text.lower()) for elem in ['как дела', 'как ты', 'how are you', 'дела', 'how is it going']]))
 def howru(message):
-    logger.info(f'</code>@{message.from_user.username}<code> used dela option:\n\n%s', message.text)
+    logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used dela option:\n\n%s', message.text)
     bot.send_message(message.chat.id, random.choices(['Хорошо', 'Отлично', 'Good. And how are u?']))
 
 
 @bot.message_handler(func=lambda message: sum([int(elem in message.text.lower()) for elem in ['зовут', 'name', 'имя']]))
 def name(message):
-    logger.info(f'</code>@{message.from_user.username}<code> used name option:\n\n%s', message.text)
+    logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used name option:\n\n%s', message.text)
     bot.send_message(message.chat.id, random.choices(['Я telegram-template-bot', 'Я бот шаблон, но ты можешь звать меня в свой проект', 'Это секрет. Используй команду /help, чтобы узнать']))
 
 
 @bot.message_handler(func=lambda message: True)
 def echo(message):
-    logger.info(f'</code>@{message.from_user.username}<code> used echo:\n\n%s', message.text)
+    logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used echo:\n\n%s', message.text)
     bot.send_message(message.chat.id, message.text)
 
 
