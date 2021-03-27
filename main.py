@@ -94,6 +94,24 @@ def say_welcome(message):
                      parse_mode='html')
 
 
+@bot.message_handler(func=lambda message: sum([int(elem in message.text.lower()) for elem in ['привет', 'hello', 'hi', 'privet']]))
+def echo(message):
+    logger.info(f'</code>@{message.from_user.username}<code> used hi option:\n\n%s', message.text)
+    bot.send_message(message.chat.id, random.choices(['Приветствую', 'Здравствуйте', 'Привет!']))
+
+                     
+@bot.message_handler(func=lambda message: sum([int(elem in message.text.lower()) for elem in ['как дела', 'как ты', 'how are you', 'дела']]))
+def echo(message):
+    logger.info(f'</code>@{message.from_user.username}<code> used dela option:\n\n%s', message.text)
+    bot.send_message(message.chat.id, random.choices(['Хорошо', 'Отлично', 'Good. And how are u?']))
+
+
+@bot.message_handler(func=lambda message: sum([int(elem in message.text.lower()) for elem in ['зовут', 'name', 'имя']]))
+def echo(message):
+    logger.info(f'</code>@{message.from_user.username}<code> used name option:\n\n%s', message.text)
+    bot.send_message(message.chat.id, random.choices(['Я telegram-template-bot', 'Я бот шаблон, но ты можешь звать меня в свой проект', 'Это секрет. Используй команда /help, чтобы узнать']))
+
+
 @bot.message_handler(func=lambda message: True)
 def echo(message):
     logger.info(f'</code>@{message.from_user.username}<code> used echo:\n\n%s', message.text)
