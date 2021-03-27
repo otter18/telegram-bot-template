@@ -102,7 +102,7 @@ def hi(message):
     bot.send_message(message.chat.id, random.choices(['Приветствую', 'Здравствуйте', 'Привет!']))
 
                      
-@bot.message_handler(func=lambda message: sum([int(elem in message.text.lower()) for elem in ['как дела', 'как ты', 'how are you', 'дела']]))
+@bot.message_handler(func=lambda message: sum([int(elem in message.text.lower()) for elem in ['как дела', 'как ты', 'how are you', 'дела', 'how is it going']]))
 def howru(message):
     logger.info(f'</code>@{message.from_user.username}<code> used dela option:\n\n%s', message.text)
     bot.send_message(message.chat.id, random.choices(['Хорошо', 'Отлично', 'Good. And how are u?']))
