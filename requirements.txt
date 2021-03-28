@@ -2,6 +2,6 @@ gunicorn
 Flask
 sslcrypto
 pyTelegramBotAPI
-uptime
 datetime
 tg-logger
+pytz
