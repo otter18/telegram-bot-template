@@ -1,5 +1,6 @@
 gunicorn
 Flask
+werkzeug
 sslcrypto
 pyTelegramBotAPI
 datetime

@@ -4,6 +4,7 @@ import traceback
 
 import pytz
 from flask import request
+from werkzeug.exceptions import HTTPException
 
 from setup import *
 
@@ -15,8 +16,11 @@ boot_date = datetime.datetime.now(tz=pytz.timezone("Europe/Moscow"))
 # -------------- Exception handler --------------
 @app.errorhandler(Exception)
 def handle_exception(e):
+    if isinstance(e, HTTPException):
+        return e
+
     logger.error(traceback.format_exc())
-    # return "Oops", 500
+    return "Oops", 500
 
 
 # -------------- status webpage --------------
