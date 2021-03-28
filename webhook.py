@@ -41,7 +41,8 @@ def status():
 # ------------- webhook ----------------
 @app.route('/' + WEBHOOK_TOKEN, methods=['POST'])
 def getMessage():
-    temp = request.stream.read().decode("utf-8")
+    # temp = request.stream.read().decode("utf-8")
+    temp = request.get_data().decode("utf-8")
     temp = telebot.types.Update.de_json(temp)
     logger.debug('New message received. raw: %s', temp)
     bot.process_new_updates([temp])
