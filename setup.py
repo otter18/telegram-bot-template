@@ -17,7 +17,6 @@ logger = logging.getLogger("tg-bot-template")
 users = [int(os.environ.get("ADMIN_ID"))]
 alpha_logger = logging.getLogger()
 alpha_logger.setLevel(logging.INFO)
-
 tg_logger.setup(alpha_logger, token=os.environ.get("LOG_BOT_TOKEN"), users=users)
 
 app.logger.setLevel(logging.ERROR)
