@@ -1,8 +1,9 @@
 # Telegram bot
-- This bot is meant to be hosted on [Heroku](https://www.heroku.com/home)
-- Telegram webhook is connected with flask
 
 Setup guide is available in this [article](https://habr.com/ru/post/549178/) (RU)
+
+- This bot is meant to be hosted on [Heroku](https://www.heroku.com/home)
+- Telegram webhook is connected with flask
 
 ## Environment variables
 
