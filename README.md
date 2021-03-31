@@ -17,7 +17,7 @@ Setup guide is available in this [article](https://habr.com/ru/post/549178/) (RU
 - `IS_PRODUCTION` - flag to run flask server or use bot polling instead
 
 ### Tg-logger, [[repo]](https://github.com/otter18/tg_logger)
-- `LOG_BOT_TOKEN` - bot token for logging
+- `LOG_BOT_TOKEN` - bot token for logging, leave empty to disable
 - `ADMIN_ID` - user_id to send logs to
 
 
