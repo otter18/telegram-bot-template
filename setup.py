@@ -14,16 +14,18 @@ app = Flask(__name__)
 # ------------- logging -------------
 logger = logging.getLogger("tg-bot-template")
 
-users = [int(os.environ.get("ADMIN_ID"))]
 alpha_logger = logging.getLogger()
 alpha_logger.setLevel(logging.INFO)
-tg_logger.setup(alpha_logger, token=os.environ.get("LOG_BOT_TOKEN"), users=users)
 
 app.logger.setLevel(logging.ERROR)
-tg_logger.setup(app.logger, token=os.environ.get("LOG_BOT_TOKEN"), users=users)
-
 telebot.logger.setLevel(logging.ERROR)
-tg_logger.setup(telebot.logger, token=os.environ.get("LOG_BOT_TOKEN"), users=users)
+
+users = [int(os.environ.get("ADMIN_ID"))]
+
+if os.environ.get("LOG_BOT_TOKEN") != '':
+    tg_logger.setup(alpha_logger, token=os.environ.get("LOG_BOT_TOKEN"), users=users)
+    tg_logger.setup(app.logger, token=os.environ.get("LOG_BOT_TOKEN"), users=users)
+    tg_logger.setup(telebot.logger, token=os.environ.get("LOG_BOT_TOKEN"), users=users)
 
 # ------------- webhook -------------
 ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD')
