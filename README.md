@@ -1,6 +1,6 @@
 # Telegram bot
 
-Setup guide is available in this [article](https://habr.com/ru/post/549178/) (RU)
+Setup guide is available in [this article](https://habr.com/ru/post/549178/) (RU)
 
 - This bot is meant to be hosted on [Heroku](https://www.heroku.com/home)
 - Telegram webhook is connected with flask
@@ -14,7 +14,7 @@ Setup guide is available in this [article](https://habr.com/ru/post/549178/) (RU
 
 ### Server settings
 - `HOST` - host to set as webhook, e.g *example.herokuapp.com*
-- `IS_PRODUCTION` - flag to run flask server or use bot polling instead
+- `IS_PRODUCTION` - flag to run flask server or to use bot polling instead
 
 ### Tg-logger, [[repo]](https://github.com/otter18/tg_logger)
 - `LOG_BOT_TOKEN` - bot token for logging, leave empty to disable
