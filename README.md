@@ -1,4 +1,5 @@
-# Telegram bot [![GitHub Repo stars](https://img.shields.io/github/stars/otter18/telegram-bot-template?style=social)](https://github.com/otter18/telegram-bot-template/stargazers)
+# ![logo](https://raw.githubusercontent.com/otter18/telegram-bot-template/main/img/tg-logo.png) Telegram bot [![GitHub Repo stars](https://img.shields.io/github/stars/otter18/telegram-bot-template?style=social)](https://github.com/otter18/telegram-bot-template/stargazers)
+
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/otter18/telegram-bot-template?label=release)
 [![GitHub](https://img.shields.io/github/license/otter18/telegram-bot-template)](https://github.com/otter18/telegram-bot-template/blob/main/LICENSE)
 
@@ -27,3 +28,10 @@ Setup guide is available in [this article](https://habr.com/ru/post/549178/) (RU
 - `/?password={ADMIN_PASSWORD}` - status page
 - `/set_webhook?password={ADMIN_PASSWORD}` - setup webhook
 - `/remove_webhook?password={ADMIN_PASSWORD}` - remove webhook
+
+## Demo
+
+### Bot
+![main bot scr](https://raw.githubusercontent.com/otter18/telegram-bot-template/main/img/main.png)
+### Tg-logger
+![logger scr](https://raw.githubusercontent.com/otter18/telegram-bot-template/main/img/logger.png)
