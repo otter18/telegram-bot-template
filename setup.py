@@ -22,7 +22,7 @@ telebot.logger.setLevel(logging.ERROR)
 
 users = [int(os.environ.get("ADMIN_ID"))]
 
-if os.environ.get("LOG_BOT_TOKEN") != '':
+if os.environ.get("LOG_BOT_TOKEN", '') != '':
     tg_logger.setup(alpha_logger, token=os.environ.get("LOG_BOT_TOKEN"), users=users)
     tg_logger.setup(app.logger, token=os.environ.get("LOG_BOT_TOKEN"), users=users)
     tg_logger.setup(telebot.logger, token=os.environ.get("LOG_BOT_TOKEN"), users=users)
